@@ -45,8 +45,8 @@ class Tokenizer(object):
         return out
 
     def tokenize(self, text):
-        out = text.lower()
-        out = self._remove_number(out)
+        # out = text.lower()
+        out = self._remove_number(text)
         out = self._whitespace_split(out)
         new_word_list = []
         for word in out:
