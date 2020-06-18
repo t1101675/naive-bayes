@@ -23,7 +23,7 @@ random.seed(seed)
 cand_nums = [21, 24, 21, 6]
 features_num = len(cand_nums)
 feature_weights = [3, 0, 5, 0]
-train_set_rate = 1
+train_set_rate = 0.05
 
 from_features = ['[UNK]', 'hotmail', 'lingo', 'gmail', 'yahoo', 'aol', '0451', 'iname', 'singnet', 'www.loveinfashion', 'o-himesama',
                  'aries.livedoor', 'oh-oku', 'msn', 'paypal', 'tc.fluke', 'ey', 'specialdevices', 'buta-gori', 'plan9.bell-labs', 'halcyon']
@@ -262,7 +262,7 @@ def main():
         all_test_mails = preprocess(all_test_mails, all_test_labels, do_train=False)
         preds = test(id_2_w, w_2_id, probs, feature_probs, pos_prob, neg_prob, all_test_mails)
         result = evaluate(all_test_labels, preds)
-
+        print(len(all_test_labels))
         results.append(result)
         print(result)
 
